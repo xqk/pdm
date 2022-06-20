@@ -4,7 +4,7 @@
   "description": "pdm",
   "scripts": {
     "test": "jest",
-    "electron": "electron ./src/main",
+    "electron": "electron ./src/main.js",
     "start": "node bin/start.js",
     "build": "node bin/build.js",
     "package-web": "node bin/build.js --web ",
