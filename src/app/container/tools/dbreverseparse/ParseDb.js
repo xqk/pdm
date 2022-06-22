@@ -42,6 +42,18 @@ export default React.memo(forwardRef(({prefix, dataSource, getDbData, config,
             defKey: d.defKey.toLocaleLowerCase(),
             originDefKey: d.defKey,
           }));
+        } else if (dbData.flag === 'DBTABLEUPPERCASE') {
+          tempData = tempData.map(d => ({
+            ...d,
+            defKey: tablePrefix + d.defKey.toLocaleUpperCase(),
+            originDefKey: d.defKey,
+          }));
+        } else if (dbData.flag === 'DBTABLELOWCASE') {
+          tempData = tempData.map(d => ({
+            ...d,
+            defKey: tablePrefix + d.defKey.toLocaleLowerCase(),
+            originDefKey: d.defKey,
+          }));
         } else if (dbData.flag === 'DBTABLE') {
           tempData = tempData.map(d => ({
             ...d,

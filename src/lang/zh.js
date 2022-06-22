@@ -761,6 +761,8 @@ export default {
             UPPERCASE: '全大写',
             LOWCASE: '全小写',
             DEFAULT: '不处理',
+            DBTABLEUPPERCASE: '全大写(数据库+表名)',
+            DBTABLELOWCASE: '全小写(数据库+表名)',
             DBTABLE: '数据库+表名',
         },
         parseDbTitle: '解析数据库',

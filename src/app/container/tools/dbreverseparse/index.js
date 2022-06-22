@@ -90,6 +90,20 @@ export default React.memo(({prefix, dataSource, dataChange, config, onClose, onO
                 fields: (d.fields || []).map(f => ({...f, defKey: f.defKey?.toLocaleUpperCase()})),
                 defKey: d.defKey.toLocaleUpperCase(),
               };
+            } else if (dbData.flag === 'DBTABLEUPPERCASE') {
+              return {
+                ...d,
+                group,
+                fields: (d.fields || []).map(f => ({...f, defKey: f.defKey.toLocaleUpperCase()})),
+                defKey: tablePrefix + d.defKey.toLocaleUpperCase(),
+              };
+            } else if (dbData.flag === 'DBTABLELOWCASE') {
+              return {
+                ...d,
+                group,
+                fields: (d.fields || []).map(f => ({...f, defKey: f.defKey.toLocaleLowerCase()})),
+                defKey: tablePrefix + d.defKey.toLocaleLowerCase(),
+              };
             } else if (dbData.flag === 'DBTABLE') {
               return {
                 ...d,

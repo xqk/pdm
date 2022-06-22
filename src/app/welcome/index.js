@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import {Progressbar, Modal, UpdateMessage, FormatMessage, Button} from 'components';
+import {Progressbar, Modal, UpdateMessage, FormatMessage} from 'components';
 import { fail, success, pageType, CONFIG } from '../../lib/variable';
 import './style/index.less';
 import {

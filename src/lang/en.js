@@ -760,6 +760,8 @@ export default {
             UPPERCASE: 'uppercase',
             LOWCASE: 'lowcase',
             DEFAULT: 'default',
+            DBTABLEUPPERCASE: 'uppercase(Database + table name)',
+            DBTABLELOWCASE: 'lowcase(Database + table name)',
             DBTABLE: 'Database + table name',
         },
         parseDbTitle: 'parse db',

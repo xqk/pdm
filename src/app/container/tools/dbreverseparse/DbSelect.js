@@ -40,6 +40,12 @@ export default React.memo(({prefix, dataSource, dbChange}) => {
           allowClear={false}
           onChange={e => dbChange(e, 'flag')}
         >
+          <Option value='DBTABLEUPPERCASE' key='DBTABLEUPPERCASE'>
+            <FormatMessage id='dbReverseParse.nameFormatType.DBTABLEUPPERCASE'/>
+          </Option>
+          <Option value='DBTABLELOWCASE' key='DBTABLELOWCASE'>
+            <FormatMessage id='dbReverseParse.nameFormatType.DBTABLELOWCASE'/>
+          </Option>
           <Option value='DBTABLE' key='DBTABLE'>
             <FormatMessage id='dbReverseParse.nameFormatType.DBTABLE'/>
           </Option>

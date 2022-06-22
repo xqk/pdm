@@ -1,5 +1,5 @@
 /* eslint-disable */
-const {app, BrowserWindow, Menu, nativeImage, ipcMain, dialog} = require('electron');
+const {app, BrowserWindow, Menu, nativeImage, ipcMain, dialog, globalShortcut} = require('electron');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
@@ -190,6 +190,11 @@ function createWindow() {
     menu = null;
   }
   Menu.setApplicationMenu(menu);
+
+  // 在开发环境和生产环境均可通过快捷键打开devTools
+  globalShortcut.register('CommandOrControl+Shift+i', function () {
+    win.webContents.openDevTools()
+  })
 }
 
 // Electron 会在初始化后并准备
