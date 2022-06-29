@@ -4,14 +4,15 @@ import { platform } from './middle';
 let packageData;
 let _http;
 let os;
+let defaultUrl;
 
 if (platform === 'json') {
   packageData = require('../../package.json');
   _http = require('http');
   os = require('os');
+  defaultUrl = `http://www.icl.site/launch/${os.platform()}/${packageData.version}`;
 }
 
-const defaultUrl = `http://www.pdman.cn/launch/${os.platform()}/${packageData.version}`;
 //const defaultUrl = 'http://127.0.0.1/update.json';
 
 export const compareVersion = (v1 = '', v2) => {
@@ -31,6 +32,9 @@ export const compareVersion = (v1 = '', v2) => {
 
 export const getVersion = () => {
   return new Promise((res, rej) => {
+    if (_http === null) {
+      return;
+    }
     let id;
     const result = _http.get(defaultUrl, (req) => {
       let result = '';

@@ -75,6 +75,7 @@ export default React.memo(({prefix, dataSource, dataChange, config, onClose, onO
           });
         } else {
           let tempData = data.body.map((d) => {
+            console.log(d);
             const group = selectedTable.filter(t => t.originDefKey === d.defKey)[0]?.group;
             if (dbData.flag === 'LOWCASE') {
               return {
