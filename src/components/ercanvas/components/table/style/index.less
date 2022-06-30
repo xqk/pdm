@@ -35,6 +35,21 @@
         transform: translate(-11.5px, 5px) rotate(-45deg);
       }
     }
+    &-tag {
+      float: left;
+      position: fixed;
+      top:-23px;
+      &-even {
+        float: left;
+        padding: 2px 4px;
+        background: @tag-even-color;
+      }
+      &-odd {
+        float: left;
+        padding: 2px 4px;
+        background: @tag-odd-color;
+      }
+    }
   }
   &-body {
     height: calc(100% - 27px);

@@ -264,6 +264,7 @@ const Menu = React.memo(forwardRef(({contextMenus = [], onContextMenu, fieldName
             }
             const draggableStatus = getDraggable(child);
             const name = getName && getName(child) || child[defName];
+            const tags = child?.properties?.tags ? `{${child.properties.tags}}` : '';
             return (<li
               title={name}
               key={`${child[defKey]}`}
@@ -281,7 +282,7 @@ const Menu = React.memo(forwardRef(({contextMenus = [], onContextMenu, fieldName
                 style={{paddingLeft: 8 * (offsetNumber + 1)}}
                 className={`${currentPrefix}-menu-container-fold-item-name-child`}
               >
-                {name}
+                {`${tags}${name}`}
               </span>
               {
                 draggableStatus && <span

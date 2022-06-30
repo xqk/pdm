@@ -59,6 +59,13 @@ const Table = forwardRef(({node}, ref) => {
         .split(',');
     return `rgba(${tempColor.join(',')}, 0.05)`;
   };
+  const getTags = () => {
+    let tagsStr = '';
+    if (data?.properties?.tags) {
+      tagsStr = data.properties.tags;
+    }
+    return tagsStr ? tagsStr.split('|') : [];
+  };
   return <div
     ref={ref}
     className='chiner-er-table'
@@ -70,6 +77,13 @@ const Table = forwardRef(({node}, ref) => {
       className='chiner-er-table-header'
       style={{background: node.getProp('fillColor')}}
     >
+      <div className='chiner-er-table-header-tag'>
+        {
+          getTags().map((tag, i) => {
+            return <div className={`${i % 2 === 0 ? 'chiner-er-table-header-tag-even' : 'chiner-er-table-header-tag-odd'}`}>{tag}</div>;
+          })
+        }
+      </div>
       {`${getTitle()}${store?.data.count > 0 ? `:${store?.data.count}` : ''}`}
       {
         data?.comment &&
