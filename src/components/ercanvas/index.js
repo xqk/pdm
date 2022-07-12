@@ -1409,6 +1409,7 @@ export default ({data, dataSource, renderReady, updateDataSource, validateTableS
       exportImg: () => {
         restProps.openLoading(FormatMessage.string({id: 'toolbar.exportImgLoading'}));
         img(graphRef.current.toJSON().cells, relationType,null, false).then((dom) => {
+          console.log(dom);
           html2canvas(dom).then((canvas) => {
             document.body.removeChild(dom.parentElement.parentElement);
             const diagram = (dataSourceRef.current?.diagrams || [])

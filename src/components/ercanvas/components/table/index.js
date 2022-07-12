@@ -77,13 +77,13 @@ const Table = forwardRef(({node}, ref) => {
       className='chiner-er-table-header'
       style={{background: node.getProp('fillColor')}}
     >
-      <div className='chiner-er-table-header-tag'>
-        {
-          getTags().map((tag, i) => {
-            return <div className={`${i % 2 === 0 ? 'chiner-er-table-header-tag-even' : 'chiner-er-table-header-tag-odd'}`}>{tag}</div>;
-          })
-        }
-      </div>
+      {/*<div className='chiner-er-table-header-tag'>*/}
+      {/*  {*/}
+      {/*    getTags().map((tag, i) => {*/}
+      {/*      return <div className={`${i % 2 === 0 ? 'chiner-er-table-header-tag-even' : 'chiner-er-table-header-tag-odd'}`}>{tag}</div>;*/}
+      {/*    })*/}
+      {/*  }*/}
+      {/*</div>*/}
       {`${getTitle()}${store?.data.count > 0 ? `:${store?.data.count}` : ''}`}
       {
         data?.comment &&
